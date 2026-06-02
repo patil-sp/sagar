@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <center>
+<h2>Welcome to Student Notes Hub</h2>
+<p>Free VTU Notes for Students</p>
+</center>
+  
 <title>Student Notes Hub</title>
 <style>
+  button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
 body{font-family:Arial;margin:0;background:#f4f4f4;}
 .header{background:#2563eb;color:white;padding:15px;display:flex;justify-content:space-between;}
 .addbtn{text-decoration:none;background:white;color:#2563eb;padding:8px 12px;border-radius:8px;}
@@ -15,13 +27,25 @@ body{font-family:Arial;margin:0;background:#f4f4f4;}
 <body>
 
 <div class="header">
-<div>☰</div>
+  <div id="menu" style="display:none;background:white;padding:10px;">
+    <p><a href="index.html">🏠 Home</a></p>
+    <p><a href="notes.html">📚 Notes</a></p>
+    <p><a href="account.html">👤 Account</a></p>
+    <p><a href="about.html">ℹ️ About</a></p>
+</div>
+<button onclick="openMenu()">☰</button>
 <h2>Student Notes</h2>
 <a href="upload.html" class="addbtn">+ Add Notes</a>
 </div>
   
 <center>
 <input type="text" id="searchBox" placeholder="Search Notes..." onkeyup="searchNotes()">
+</center>
+<br>
+  <center>
+<button>Semester 1</button>
+<button>Semester 2</button>
+<button>Semester 3</button>
 </center>
 <br>
 
@@ -67,6 +91,18 @@ function searchNotes() {
         } else {
             notes[i].style.display = "none";
         }
+    }
+}
+</script>
+
+<script>
+function openMenu(){
+    var menu = document.getElementById("menu");
+
+    if(menu.style.display=="none"){
+        menu.style.display="block";
+    }else{
+        menu.style.display="none";
     }
 }
 </script>
