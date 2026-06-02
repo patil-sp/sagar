@@ -19,25 +19,30 @@ body{font-family:Arial;margin:0;background:#f4f4f4;}
 <h2>Student Notes</h2>
 <a href="upload.html" class="addbtn">+ Add Notes</a>
 </div>
+  
+<center>
+<input type="text" id="searchBox" placeholder="Search Notes..." onkeyup="searchNotes()">
+</center>
+<br>
 
 <div class="notes">
 
-<div class="card">
+<div class="card note">
 <h3>Mathematics</h3>
 <a href="https://vtu.ac.in/pdf/QP/1BMATC101.pdf" target="_blank">Open PDF</a>
 </div>
 
-<div class="card">
+<div class="card note">
 <h3>AI</h3>
 <a href="https://vtu.ac.in/pdf/QP/1BAIA103.pdf" target="_blank">Open PDF</a>
 </div>
 
-<div class="card">
+<div class="card note">
 <h3>Physics</h3>
 <a href="https://vtu.ac.in/pdf/QP/1BCEDx103.pdf" target="_blank">Open PDF</a>
 </div>
 
-<div class="card">
+<div class="card note">
 <h3>PLC</h3>
 <a href="https://vtu.ac.in/pdf/QP/1BPLC105B.pdf" target="_blank">Open PDF</a>
 </div>
@@ -49,6 +54,21 @@ body{font-family:Arial;margin:0;background:#f4f4f4;}
 <a href="notes.html">📚 Notes</a>
 <a href="account.html">👤 Account</a>
 </div>
+<script>
+function searchNotes() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let notes = document.getElementsByClassName("note");
 
+    for(let i = 0; i < notes.length; i++) {
+        let text = notes[i].innerText.toLowerCase();
+
+        if(text.includes(input)) {
+            notes[i].style.display = "block";
+        } else {
+            notes[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
