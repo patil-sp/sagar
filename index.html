@@ -2,18 +2,32 @@
 <html>
 <head>
   <center>
+<button onclick="darkMode()">🌙 Dark Mode</button>
+</center>
+<br>
+  <center>
 <h2>Welcome to Student Notes Hub</h2>
 <p>Free VTU Notes for Students</p>
 </center>
   
 <title>Student Notes Hub</title>
 <style>
-  button{
-    padding:10px 20px;
-    margin:5px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.dark{
+    background:#121212;
+    color:white;
+}
+
+.dark .card{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark .bottom{
+    background:#1e1e1e;
+}
+
+.dark a{
+    color:#66b3ff;
 }
 body{font-family:Arial;margin:0;background:#f4f4f4;}
 .header{background:#2563eb;color:white;padding:15px;display:flex;justify-content:space-between;}
@@ -104,6 +118,11 @@ function openMenu(){
     }else{
         menu.style.display="none";
     }
+}
+</script>
+<script>
+function darkMode() {
+   document.body.classList.toggle("dark");
 }
 </script>
 </body>
