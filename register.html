@@ -48,5 +48,19 @@ padding:10px;
 <p><a href="login.html">Back to Login</a></p>
 </div>
 
+<script>
+function registerUser(){
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+
+localStorage.setItem("studentName", name);
+localStorage.setItem("studentEmail", email);
+
+alert("Registration Successful");
+
+window.location.href = "account.html";
+}
+</script>
 </body>
 </html>
