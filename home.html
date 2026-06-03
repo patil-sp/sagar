@@ -42,11 +42,18 @@ body{font-family:Arial;margin:0;background:#f4f4f4;}
 <body>
 
 <div class="header">
-  <div id="menu" style="display:none;background:white;padding:10px;">
-    <p><a href="index.html">🏠 Home</a></p>
-    <p><a href="notes.html">📚 Notes</a></p>
-    <p><a href="account.html">👤 Account</a></p>
-    <p><a href="about.html">ℹ️ About</a></p>
+<div id="menu" style="display:none;background:white;padding:15px;">
+
+<p><a href="home.html">🏠 Home</a></p>
+
+<p><a href="notes.html">📚 Notes</a></p>
+
+<p><a href="account.html">👤 Account</a></p>
+
+<p><a href="about.html">ℹ️ About</a></p>
+
+<p><a href="index.html">🚪 Logout</a></p>
+
 </div>
 <button onclick="openMenu()">☰</button>
 <h2>Student Notes</h2>
@@ -125,6 +132,22 @@ function openMenu(){
 function darkMode() {
    document.body.classList.toggle("dark");
 }
+</script>
+<script>
+
+function openMenu(){
+
+let menu = document.getElementById("menu");
+
+if(menu.style.display=="none"){
+menu.style.display="block";
+}
+else{
+menu.style.display="none";
+}
+
+}
+
 </script>
 </body>
 </html>
