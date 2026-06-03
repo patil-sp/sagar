@@ -71,6 +71,15 @@ body{font-family:Arial;margin:0;background:#f4f4f4;}
 </center>
 <br>
 
+<center>
+<input type="text"
+id="searchBox"
+placeholder="🔍 Search Notes..."
+onkeyup="searchNotes()"
+style="width:90%;padding:12px;border-radius:10px;">
+</center>
+
+<br>
 <div class="notes">
 
 <div class="card note">
@@ -144,6 +153,35 @@ menu.style.display="block";
 }
 else{
 menu.style.display="none";
+}
+
+}
+
+</script>
+
+<script>
+
+function searchNotes(){
+
+let input =
+document.getElementById("searchBox")
+.value.toLowerCase();
+
+let notes =
+document.getElementsByClassName("note");
+
+for(let i=0;i<notes.length;i++){
+
+let text =
+notes[i].innerText.toLowerCase();
+
+if(text.includes(input)){
+notes[i].style.display="block";
+}
+else{
+notes[i].style.display="none";
+}
+
 }
 
 }
